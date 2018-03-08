@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package com.centurions.proto;
+option java_package = "com.centurions.proto";
+option java_outer_classname = "CenturionsProtos";
+
+message Card {
+    string id = 1;
+    string name = 2;
+    int32 point = 3;
+}
+
+message Player {
+    string id = 1;
+    string name = 2;
+}
+
+message GamePlayer {
+    Player player = 1;
+    int32 score = 2;
+    repeated Card current_deck = 3;
+}
+
+message Game {
+    string id = 1;
+    string name = 2;
+    GamePlayer player_one = 3;
+    GamePlayer player_two = 4;
+}
